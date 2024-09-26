@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm install
+      - npm uninstall react-scripts
+      - npm install react-scripts
+  build:
+    commands:
+      - npm run build
+  post_build:
+    commands:
+      - echo "Uploading build directory to S3..."
+      - aws s3 sync build/ s3://nandinibhatt.me/ --delete
+      - aws cloudfront create-invalidation --distribution-id E1JHKWLDY7Q5ZL --paths "/*"
+     
+

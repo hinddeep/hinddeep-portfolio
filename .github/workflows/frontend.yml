@@ -1,0 +1,175 @@
+name: Build and Deploy React app to AWS S3
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow on push to the main branch
+    paths-ignore:
+      - 'terraform/**'     # Ignore changes to folder X
+      - 'Dockerfile'       # Ignore changes to file Y
+
+permissions:
+  issues: write  # Allow creating issues (used by ZAP)
+
+jobs:
+  website-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+        # configure AWS creds once, dont specify everytime in env: block, override it in env if needed
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2  # Replace with your region
+
+      # speed up pipeline by caching node modules 
+      - name: Cache Node.js modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            ~/.cache
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # - name: Install Newman
+      #   run: npm install -g newman
+
+      # - name: Run Postman Tests
+      #   run: |
+      #     newman run Testing/Postman/send_email.json \
+      #       --reporters cli,json \
+      #       --reporter-json-export newman-results.json \
+      #       --suppress-exit-code
+      #       # --environment path/to/your/postman_environment.json \
+      #       # ensure this commands always returns 0, even if tests fail because otherwise, JSON will won't be created and uploaded
+
+      # - name: Upload Newman Results
+      # # This step will run regardless of previous step's outcome (even if a few tests fail artifacts will be uploaded)
+      #   if: always()  
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: newman-results
+      #     path: newman-results.json
+           
+      # # Debug steps
+      # - name: Print Node.js version
+      #   run: node --version
+
+      # - name: Print npm version
+      #   run: npm --version
+      
+      # - name: Print environment variables
+      #   run: printenv
+          
+      - name: Install dependencies
+        run: npm ci  # npm ci is preferred over npm install for CI environments
+
+      # # Lint the code using ESLint
+      # - name: Run ESLint
+      #   run: npm run lint
+
+      # # Upload ESLint results as an artifact
+      # - name: Upload ESLint results
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: eslint-report
+      #     path: eslint-report.json
+
+      # Step 4: Build the React app
+      - name: Build React app
+        run: npm run build # Treating warnings as errors because process.env.CI = true, most CI servers set this as true by default but we need to turn it off because warnings should not be treated as errors 
+        env:
+          CI: false
+
+      # - name: Start the Web App (React)
+      #   run: npm start &
+      #   env:
+      #     CI: false
+
+      #  # Step 5: Run Cypress tests in headless mode
+      # - name: Run Cypress tests
+      #   run: npx cypress run
+
+      # # Step 6: Upload Cypress videos and screenshots as artifacts for later viewing (optional)
+      # - name: Upload Cypress Artifacts
+      #   uses: actions/upload-artifact@v4
+      #   if: failure()  # Only upload if tests fail
+      #   with:
+      #     name: cypress-artifacts
+      #     path: cypress/videos
+
+      # # Step 7: Upload test results (optional)
+      # - name: Upload Cypress Results
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: cypress-results
+      #     path: cypress/reports
+
+      # # Scan for vulnerabilities using OWASP ZAP
+      # - name: OWASP ZAP Security Scan
+      #   uses: zaproxy/action-full-scan@v0.10.0
+      #   with:
+      #     target: 'http://localhost:3000'
+      #     fail-action: true
+      #     format: 'html'
+      
+      # Upload artifacts
+      # - name: Upload ZAP Scan Report
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: zap-report
+      #     path: zap-report.html
+        
+      - name: Deploy React app to AWS S3
+        run:
+          aws s3 sync build/ s3://nandinibhatt.me/ --delete --acl public-read --region us-east-2
+
+      # Since GitHub Actions runners don’t have access to EC2’s instance metadata service, the AWS CLI cannot automatically retrieve the region from the environment. Explicitly specifying the region as shown above will bypass the need for IMDS.
+      - name: Invalidate CloudFront Cache
+        run:
+          aws cloudfront create-invalidation --distribution-id E1JHKWLDY7Q5ZL --paths "/*" --debug
+        
+      # - name: Install JMeter
+      #   run: |
+      #     # sudo apt-get update
+      #     # sudo apt-get install -y jmeter --> this installs old version of JMeter which throws error
+      #     wget https://downloads.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz
+      #     tar -xzf apache-jmeter-5.6.3.tgz
+      #     sudo mv apache-jmeter-5.6.3 /opt/jmeter
+      #     echo "export JMETER_HOME=/opt/jmeter" >> $GITHUB_ENV --> for some reason, env variables are not working. jmeter not found in $PATH
+      #     echo "export PATH=\$PATH:\$JMETER_HOME/bin" >> $GITHUB_ENV
+
+      # - name: Download JMeter
+      #   run: wget https://downloads.apache.org/jmeter/binaries/apache-jmeter-5.6.3.tgz
+
+      # - name: Extract JMeter
+      #   run: tar -xzf apache-jmeter-5.6.3.tgz
+
+      # To fix error thrown by older version of JMeter but it didn't work
+      # - name: Create Custom XStream Properties
+      #   run: echo "com.thoughtworks.xstream.security.NoTypePermission=org.apache.jmeter.save.ScriptWrapper" > Testing/JMeter/custom_xstream.properties
+    
+      # Use jmeter binary directly without adding it to path variable
+      # - name: Run JMeter Test Plan
+      #   run: |
+      #     apache-jmeter-5.6.3/bin/jmeter -n -t Testing/JMeter/Test_Plan.jmx -l Testing/JMeter/results.jtl -j Testing/JMeter/jmeter.log -Jlog_level.jmeter=DEBUG
+
+      # - name: Upload JMeter Results
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: jmeter-results
+      #     path: |
+      #       Testing/JMeter/results.jtl
+      #       Testing/JMeter/jmeter.log
+
+      # - name: Notify on Failure
+      #   if: failure() # Execute only if previous steps failed
+      #   run: |
+      #     aws sns publish --topic-arn arn:aws:sns:us-east-2:975050059984:codestar-notifications- --message "Your portfolio deployment has failed."

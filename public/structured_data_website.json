@@ -1,0 +1,11 @@
+ {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Nandini Bhatt | Tester, QA, Cloud, DevOps, Automation, AWS",
+      "url": "https://nandinibhatt.me",
+      "inLanguage": [
+        "en",
+        "fr"
+      ],
+      "description": "Nandini Bhatt is a skilled software tester & full-stack developer proficient in QA, AWS, DevOps, Automation & Linux. Actively seeking a job/freelance projects."
+}
