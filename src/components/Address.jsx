@@ -22,7 +22,7 @@ const Address = () => {
           id="Address.email"
           defaultMessage="Email me"
         /></span>{" "}
-        <a href="mailto:reach@nandinibhatt.me">reach@nandinibhatt.me</a>
+        <a href="mailto:hinddeepp@appstasy.in">hinddeepp@appstasy.in</a>
       </p>
       {/* End .custom-span-contact */}
 
@@ -33,7 +33,7 @@ const Address = () => {
           id="Address.call"
           defaultMessage="Call me"
         /></span>{" "}
-        <a href="tel:14387223706">+1 (438) 722-3706</a>
+        <a href="tel:14387223706">+1 (450) 750-3196</a>
       </p>
       {/* End .custom-span-contact */}
     </>

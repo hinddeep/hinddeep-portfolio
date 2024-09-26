@@ -3,19 +3,27 @@ import React from "react";
 const SocialShare = [
   {
     iconName: "fa fa-linkedin",
-    link: "https://www.linkedin.com/in/njbhatt/",
+    link: "https://www.linkedin.com/in/hinddeep/",
   },
   {
     iconName: "fa fa-github",
-    link: "https://github.com/bhattnandini",
+    link: "https://github.com/hinddeep/",
   },
   {
     iconName: "fa fa-book",
-    link: "https://medium.com/@nandineebhatt07",
+    link: "https://blogs.hinddeep.appstasy.in",
   },
   {
     iconName: "fa fa-youtube",
-    link: "https://www.youtube.com/@nandineebhatt9140",
+    link: "https://www.youtube.com/hinddeep",
+  },
+  {
+    iconName: "fa fa-code",
+    link: "https://leetcode.com/u/hinddeep/",
+  },
+  {
+    iconName: "fa fa-stack-overflow",
+    link: "https://stackoverflow.com/users/12862910/hinddeep-s-purohit",
   }
 ];
 

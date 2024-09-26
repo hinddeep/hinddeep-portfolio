@@ -1,87 +1,62 @@
 import React from "react";
-import { FormattedMessage } from 'react-intl'
-// import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const ModalTenContent = () => {
-  // var settings = {
-  //   dots: true,
-  //   infinite: false,
-  //   speed: 500,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   draggable: false,
-  // };
-
   return (
     <div className="slideshow">
-    <figure>
-      {/* Project Details Starts */}
-      <figcaption>
-        <h3>IBM - Data analysis with Python</h3>
-        <div className="row open-sans-font">
-          <div className="col-12 col-sm-12 mb-2">
-            <i className="fa fa-file-text-o pr-2"></i>
-            {/* <span className="project-label">Link </span>:{" "} */}
-            <a
-              href="https://www.coursera.org/account/accomplishments/verify/YMM5T73RZMFX"
-              target="_blank"
-              rel="noreferrer"
-            >
+     <figure>
+        {/* Project Details Starts */}
+        <figcaption>
+          <h3>IELTS - 8.5 - C2</h3>
+          <div className="row open-sans-font">
+            {/* <div className="col-12 col-sm-12 mb-2">
+              <i className="fa fa-file-text-o pr-2"></i>
+              <span className="project-label"> <FormattedMessage
+                description="modalEightItem1"
+                id="Modaleight.item1"
+                defaultMessage="Description"
+              /></span>:{" "}
+              <span className="ft-wt-600 uppercase">
               <FormattedMessage
-                description="Modal4.item1"
-                id="Modal4.item1"
-                defaultMessage="Verify my certificate"
+                description="modalEightItem2"
+                id="Modaleight.item2"
+                defaultMessage="CodeVita is a global level coding competition organised by Tata Consultancy Services"
               />
-            </a>
-            {/* <span className="ft-wt-600 uppercase">https://play.google.com/store/apps/details?id=com.appstasy1.hotfocus4</span> */}
+              </span>
+            </div> */}
+            {/* End .col */}
+
+            {/* <div className="col-12 col-sm-6 mb-2">
+              <i className="fa fa-user-o pr-2"></i>
+              <span className="project-label">Client </span>:{" "}
+              <span className="ft-wt-600 uppercase">Envato</span>
+            </div> */}
+            {/* End .col */}
+
+            {/* <div className="col-12 col-sm-6 mb-2">
+              <i className="fa fa-code pr-2"></i>
+              <span className="project-label">Langages </span>:{" "}
+              <span className="ft-wt-600 uppercase">HTML, CSS, Javascript</span>
+            </div> */}
+            {/* End .col */}
+
+            {/* End .col */}
           </div>
-          {/* End .col */}
+          {/* End .row */}
+        </figcaption>
+        {/* Project Details Ends */}
 
-          {/* <div className="col-12 col-sm-6 mb-2">
-            <i className="fa fa-code pr-2"></i>
-            <span className="project-label">Langages </span>:{" "}
-            <span className="ft-wt-600 uppercase">HTML, CSS, Javascript</span>
-          </div> */}
-          {/* End .col */}
-
-          {/* <div className="col-12 col-sm-6 mb-2">
-            <i className="fa fa-external-link pr-2"></i>
-            <span className="project-label">Preview </span>:{" "}
-            <span className="ft-wt-600 uppercase">
-              <a
-                href="https://themeforest.net/item/edina-personal-portfolio-react-template/34082686"
-                target="_blank"
-                rel="noreferrer"
-              >
-                www.envato.com
-              </a>
-            </span>
-          </div> */}
-          {/* End .col */}
-        </div>
-        {/* End .row */}
-      </figcaption>
-      {/* Project Details Ends */}
-
-      {/*  Main Project Content Starts */}
-      <img src="https://assets.nandinibhatt.me/certificates/data_analysis.jpg" alt="Nandini Bhatt's Data analysis with Python certification, data science, ML, AI, IBM" />
-      {/* <Slider {...settings}>
-        <div className="slide_item">
-          <img src="img/projects/project-3.jpg" alt="slide 1" />
-        </div>
-        <div className="slide_item">
-          <img src="img/projects/project-2.jpg" alt="slide 1" />
-        </div>
-        <div className="slide_item">
-          <img src="img/projects/project-1.jpg" alt="slide 1" />
-        </div>
-      </Slider> */}
-      {/* Main Project Content Ends */}
-    </figure>
-  </div>
-  //  End .slideshow
+        {/*  Main Project Content Starts */}
+        <img src="img/projects/IELTS.jpeg" alt="Portolio" />
+        {/* <div className="position-relative" style={{ paddingBottom: '56.25%', height: 0 }}>
+                  <iframe title="Paper Presentation" src="https://www.youtube.com/embed/B6Pz5kr8Fbo" 
+                  referrerPolicy="strict-origin-when-cross-origin" webkitallowfullscreen="true" mozallowfullscreen="true" 
+                  allowFullScreen className="position-absolute" style={{top: 0, left: 0, width: '100%', height: '100%'}}>
+                  </iframe> 
+                </div>*/}
+        {/* Main Project Content Ends */}
+      </figure>
+    </div>
+    //  End .slideshow
   );
 };
 

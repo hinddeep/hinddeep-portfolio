@@ -2,16 +2,16 @@ import React from "react";
 import { FormattedMessage } from 'react-intl'
 
 const personalInfoContent = [
-  { meta: "first name", metaInfo: "Nandini" },
-  { meta: "last name", metaInfo: "Bhatt" },
-  { meta: "Age", metaInfo: "26" },
+  { meta: "first name", metaInfo: "Hinddeep" },
+  { meta: "last name", metaInfo: "Purohit" },
+  { meta: "Age", metaInfo: "27" },
   { meta: "Nationality", metaInfo: "Indian" },
   { meta: "Freelance", metaInfo: "Available" },
   // { meta: "Address", metaInfo: "404-1160 Rue Saint-Mathieu, Montreal, Quebec, Canada - H3H 2P4" },
-  { meta: "phone", metaInfo: "+1 (438) 722-3706" },
-  { meta: "Email", metaInfo: "reach@nandinibhatt.me" },
+  { meta: "phone", metaInfo: "+1 (450) 750-3196" },
+  { meta: "Email", metaInfo: "hinddeepp@appstasy.in" },
   // { meta: "Skype", metaInfo: " steve.milner" },
-  { meta: "langages", metaInfo: "English (C1), French (B2), Hindi (Bilingual), Gujarati (Native)" },
+  { meta: "langages", metaInfo: "English (C2), French (B2), Hindi (Bilingual), Gujarati (Native)" },
 ];
 
 const PersonalInfo = ({ }) => {
@@ -138,7 +138,7 @@ const PersonalInfo = ({ }) => {
             defaultMessage="Email"
           />: </span>
           <span className="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">
-            <a href="mailto:reach@nandinibhatt.me" data-cy="email">
+            <a href="mailto:hinddeepp@appstasy.in" data-cy="email">
               <FormattedMessage
                 description="PIValue7"
                 id="PI.Value7"

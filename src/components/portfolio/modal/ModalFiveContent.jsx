@@ -1,77 +1,74 @@
 import React from "react";
 import { FormattedMessage } from 'react-intl'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const ModalFiveContent = () => {
   return (
     <div className="slideshow">
-    <figure>
-      {/* Project Details Starts */}
-      <figcaption>
-        <h3>Lean Six Sigma Yellow Belt</h3>
-        <div className="row open-sans-font">
-          {/* <div className="col-12 col-sm-12 mb-2">
-            <i className="fa fa-file-text-o pr-2"></i> */}
-            {/* <span className="project-label">Link </span>:{" "} */}
-            {/* <a
-              href="https://atsqa.org/certified-testers/profile/92007d7a02c74bd2abc44232ba4d53db"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FormattedMessage
-                description="Modal3Item1"
-                id="Modal4.item1"
-                defaultMessage="Verify my certificate"
-              />
-            </a> */}
-            {/* <span className="ft-wt-600 uppercase">https://play.google.com/store/apps/details?id=com.appstasy1.hotfocus4</span> */}
-          {/* </div> */}
-          {/* End .col */}
+     <figure>
+        {/* Project Details Starts */}
+        <figcaption>
+          <h3>Oracle Certified Associate</h3>
+          <div className="row open-sans-font">
+            <div className="col-12 col-sm-12 mb-2">
+              <i className="fa fa-file-text-o pr-2"></i>
+              <span className="project-label"> <FormattedMessage
+                description="modalFiveItem1"
+                id="Modalfive.item1"
+                defaultMessage="Concentration: "
+              /></span>:{" "}
+              <span className="ft-wt-600 uppercase">Java SE 8</span>
+            </div>
+            {/* End .col */}
 
-          {/* <div className="col-12 col-sm-6 mb-2">
-            <i className="fa fa-code pr-2"></i>
-            <span className="project-label">Langages </span>:{" "}
-            <span className="ft-wt-600 uppercase">HTML, CSS, Javascript</span>
-          </div> */}
-          {/* End .col */}
+            {/* <div className="col-12 col-sm-6 mb-2">
+              <i className="fa fa-user-o pr-2"></i>
+              <span className="project-label">Client </span>:{" "}
+              <span className="ft-wt-600 uppercase">Envato</span>
+            </div> */}
+            {/* End .col */}
 
-          {/* <div className="col-12 col-sm-6 mb-2">
-            <i className="fa fa-external-link pr-2"></i>
-            <span className="project-label">Preview </span>:{" "}
-            <span className="ft-wt-600 uppercase">
-              <a
-                href="https://themeforest.net/item/edina-personal-portfolio-react-template/34082686"
-                target="_blank"
-                rel="noreferrer"
-              >
-                www.envato.com
-              </a>
-            </span>
-          </div> */}
-          {/* End .col */}
-        </div>
-        {/* End .row */}
-      </figcaption>
-      {/* Project Details Ends */}
+            {/* <div className="col-12 col-sm-6 mb-2">
+              <i className="fa fa-code pr-2"></i>
+              <span className="project-label">Langages </span>:{" "}
+              <span className="ft-wt-600 uppercase">HTML, CSS, Javascript</span>
+            </div> */}
+            {/* End .col */}
 
-      {/*  Main Project Content Starts */}
-      <img src="https://assets.nandinibhatt.me/certificates/yellow_belt.png" alt="Nandini Bhatt's Lean Six Sigma Yellow Belt certification,Software Tester, QA, Cloud, DevOps, Automation, AWS, Agile" />
-      {/* <Slider {...settings}>
-        <div className="slide_item">
-          <img src="img/projects/project-3.jpg" alt="slide 1" />
-        </div>
-        <div className="slide_item">
-          <img src="img/projects/project-2.jpg" alt="slide 1" />
-        </div>
-        <div className="slide_item">
-          <img src="img/projects/project-1.jpg" alt="slide 1" />
-        </div>
-      </Slider> */}
-      {/* Main Project Content Ends */}
-    </figure>
-  </div>
-  //  End .slideshow
+            {/* <div className="col-12 col-sm-12 mb-2">
+              <i className="fa fa-external-link pr-2"></i>
+              <span className="project-label"><FormattedMessage
+                description="modalOneItem2"
+                id="Modalone.item2"
+                defaultMessage="Verify At:"
+              /> </span>:{" "}
+              <span className="ft-wt-600 uppercase">
+                <a
+                  href="https://www.certmetrics.com/comptia/public/verification.aspx/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  https://www.certmetrics.com/comptia/public/verification.aspx/
+                </a>
+              </span>
+            </div> */}
+            {/* End .col */}
+          </div>
+          {/* End .row */}
+        </figcaption>
+        {/* Project Details Ends */}
+
+        {/*  Main Project Content Starts */}
+        <img src="img/projects/OCA.jpg" alt="Portolio" />
+        {/* <div className="position-relative" style={{ paddingBottom: '56.25%', height: 0 }}>
+                  <iframe title="Paper Presentation" src="https://www.youtube.com/embed/B6Pz5kr8Fbo" 
+                  referrerPolicy="strict-origin-when-cross-origin" webkitallowfullscreen="true" mozallowfullscreen="true" 
+                  allowFullScreen className="position-absolute" style={{top: 0, left: 0, width: '100%', height: '100%'}}>
+                  </iframe> 
+                </div>*/}
+        {/* Main Project Content Ends */}
+      </figure>
+    </div>
+    //  End .slideshow
   );
 };
 

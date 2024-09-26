@@ -17,7 +17,7 @@ const Contact = ({ }) => {
     var subject = document.getElementById("subject").value;
     var message = document.getElementById("message").value;
 
-    fetch('https://l75iqhfex6.execute-api.us-east-2.amazonaws.com/dev/Myresource12', {
+    fetch('https://api.appstasy.in/sendEmail', {
       method: 'POST',
       mode: 'no-cors',
       headers: {
@@ -30,7 +30,7 @@ const Contact = ({ }) => {
         toEmail: email,
         message: message,
         subject: subject,
-        src: "reach@nandinibhatt.me"
+        src: "hinddeepp@appstasy.in"
       })
     })
     alert("Message sent successfully!");

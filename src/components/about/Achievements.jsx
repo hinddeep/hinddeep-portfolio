@@ -2,9 +2,9 @@ import React from "react";
 import { FormattedMessage } from 'react-intl'
 
 const achievementsContent = [
-  { title: "1", subTitle1: "research paper", subTitle2: "published" },
-  { title: "6", subTitle1: "Certification", subTitle2: "Lean Six Sigma, ISTQB, Python" },
-  // { title: "1", subTitle1: "Startup", subTitle2: "Appstasy" },
+  { title: "3", subTitle1: "research paper", subTitle2: "published" },
+  { title: "5", subTitle1: "Certification", subTitle2: " " },
+  { title: "1", subTitle1: "Startup", subTitle2: "Appstasy" },
   { title: "1", subTitle1: "Mobile app", subTitle2: "Hotfocus" },
 ];
 

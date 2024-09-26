@@ -4,23 +4,19 @@ import { FormattedMessage } from 'react-intl'
 const ModalTwoContent = () => {
   return (
     <div className="slideshow">
-      <figure>
+     <figure>
         {/* Project Details Starts */}
         <figcaption>
-          <h3><FormattedMessage
-            description="paperpresent"
-            id="paperpresent"
-            defaultMessage="Paper Presentation"
-          /></h3>
+          <h3>CompTIA A+</h3>
           <div className="row open-sans-font">
             <div className="col-12 col-sm-12 mb-2">
               <i className="fa fa-file-text-o pr-2"></i>
               <span className="project-label"> <FormattedMessage
-                description="modalOneItem1"
-                id="Modalone.item1"
-                defaultMessage="About"
+                description="modalTwoItem1"
+                id="Modaltwo.item1"
+                defaultMessage="Code to verify"
               /></span>:{" "}
-              <span className="ft-wt-600 uppercase">Mitigating Demographic Bias in AI-based Resume Filtering</span>
+              <span className="ft-wt-600 uppercase">177BK7XFKCEE1W2S</span>
             </div>
             {/* End .col */}
 
@@ -38,23 +34,23 @@ const ModalTwoContent = () => {
             </div> */}
             {/* End .col */}
 
-            {/* <div className="col-12 col-sm-12 mb-2">
+            <div className="col-12 col-sm-12 mb-2">
               <i className="fa fa-external-link pr-2"></i>
               <span className="project-label"><FormattedMessage
                 description="modalOneItem2"
                 id="Modalone.item2"
-                defaultMessage="Link"
+                defaultMessage="Verify At:"
               /> </span>:{" "}
               <span className="ft-wt-600 uppercase">
                 <a
-                  href="https://themeforest.net/item/edina-personal-portfolio-react-template/34082686"
+                  href="https://www.certmetrics.com/comptia/public/verification.aspx/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  www.google.com
+                  https://www.certmetrics.com/comptia/public/verification.aspx/
                 </a>
               </span>
-            </div> */}
+            </div>
             {/* End .col */}
           </div>
           {/* End .row */}
@@ -62,15 +58,13 @@ const ModalTwoContent = () => {
         {/* Project Details Ends */}
 
         {/*  Main Project Content Starts */}
-        {/* <img src="img/projects/project-1.jpg" alt="Portolio" /> */}
-        <div className="position-relative" style={{ paddingBottom: '56.25%', height: 0 }}>
-          <iframe className="position-absolute frame-border" style={{ top: 0, left: 0, width: '100%', height: '100%' }}
-            src="https://www.youtube.com/embed/cNkGS7Dv-UM?si=oH4rteK3FDUTHHfp"
-            title="Paper Presentation"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin" allowFullScreen>
-          </iframe>
-        </div>
+        <img src="img/projects/aplus.jpg" alt="Portolio" />
+        {/* <div className="position-relative" style={{ paddingBottom: '56.25%', height: 0 }}>
+                  <iframe title="Paper Presentation" src="https://www.youtube.com/embed/B6Pz5kr8Fbo" 
+                  referrerPolicy="strict-origin-when-cross-origin" webkitallowfullscreen="true" mozallowfullscreen="true" 
+                  allowFullScreen className="position-absolute" style={{top: 0, left: 0, width: '100%', height: '100%'}}>
+                  </iframe> 
+                </div>*/}
         {/* Main Project Content Ends */}
       </figure>
     </div>

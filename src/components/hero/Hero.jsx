@@ -6,9 +6,9 @@ import { FormattedMessage } from 'react-intl';
 const heroContent = {
   heroImage: "img/hero/dark.jpg",
   heroMobileImage: "img-mobile",
-  heroTitleName: "Nandini Bhatt",
-  heroDesignation: "QA Engineer",
-  heroDescriptions: `I, Nandini Bhatt, am an experienced IT professional with a passion for innovation and problem-solving. I am proficient in Automation, Cloud Computing (AWS), DevOps, Full-stack Software Development, Linux Administration, Programming, and SDLC. I have a proven track record of delivering high-quality results using Agile methodologies and Test-Driven Development. Besides, I am an exceptional team player with a charismatic personality. I serve as a source of inspiration for my juniors and never cease to learn from my seniors. My inquisitive nature and drive to push the boundaries of what is possible, help me stay abreast of the state-of-the-art state developments in the industry. I am actively seeking new opportunities to challenge myself. Please feel free to reach out to me!`,
+  heroTitleName: "Hinddeep Purohit",
+  heroDesignation: "Cybersecurity Researcher",
+  heroDescriptions: `I, Hinddeep Purohit, am a budding cybersecurity researcher with publications in top-tier cybersecurity conferences such as USENIX Security. My research interests include telecom network (especially 5G) and software-defined networking security. I have co-authored two patents (provisional as of this writing) with my peers, professors at Concordia University and managers at Ericsson. I have extensive hands-on experience with programming, web and mobile app development (native, hybrid), containerization technologies (Docker, Kubernetes, helm, etc.), cloud environments (AWS, GCP), Linux command line and DevOps. Besides, I am a language aficionado who blogs from time to time on various topics. I aspire to be a polyglot one day with 4 languages including English (C2) and French (B2) already well under my belt. Next up on the list is Spanish.`,
   heroBtn: "more about me",
 };
 
@@ -27,24 +27,24 @@ const Hero = () => {
     console.log('Component has been rendered');
 
     if (document.body.classList.contains('light')) {
-      const web = document.querySelectorAll('.nandini-web');
+      const web = document.querySelectorAll('.hinddeep-web');
       web.forEach(element => {
-        element.src = "img/nandini-web-light.webp";
+        element.src = "img/hinddeep-web-light.webp";
       });
   
-      const mobile = document.querySelectorAll('.nandini-mobile');
+      const mobile = document.querySelectorAll('.hinddeep-mobile');
       mobile.forEach(element => {
-        element.src = "img/nandini-mobile-light.webp";
+        element.src = "img/hinddeep-mobile-light.webp";
       });    
     } else {
-      const web = document.querySelectorAll('.nandini-web');
+      const web = document.querySelectorAll('.hinddeep-web');
         web.forEach(element => {
-          element.src = "img/nandini-web-dark.webp";
+          element.src = "img/hinddeep-web-dark.webp";
         });
     
-        const mobile = document.querySelectorAll('.nandini-mobile');
+        const mobile = document.querySelectorAll('.hinddeep-mobile');
         mobile.forEach(element => {
-          element.src = "img/nandini-mobile-dark.webp";
+          element.src = "img/hinddeep-mobile-dark.webp";
         });
     }
     // Optionally, return a cleanup function (runs when component is unmounted)
@@ -60,7 +60,7 @@ const Hero = () => {
           className="col-lg-4 bg position-fixed d-none d-lg-block" style={{ position: 'relative' }}
         >
           <img
-            src="img/nandini-web-light.webp"
+            src="img/hinddeep-web-light.webp"
             // width="82%" height="82%"
             style={{
               borderRadius: '30px',
@@ -69,8 +69,8 @@ const Hero = () => {
               left: '50%',
               transform: 'translate(-50%, -50%)',
             }}
-            className="img-fluid main-img-mobile nandini-web"
-            alt="Nandini Bhatt, Tester, QA, Cloud, DevOps, Automation, AWS"
+            className="img-fluid main-img-mobile hinddeep-web"
+            alt="Hinddeep Purohit, Tester, QA, Cloud, DevOps, Automation, AWS"
           />
           {/* <iframe title="Video Resume" style={{ margin: 25 }} width="90%" height="90%" data-cy="v"
             src="https://www.youtube.com/embed/wavzkI0Sztc">
@@ -80,9 +80,9 @@ const Hero = () => {
         <div className="col-12 col-lg-8 offset-lg-4 home-details text-center text-lg-start">
           <div>
             <img
-              src={"img/nandini-mobile-dark.webp"}
-              className="img-fluid main-img-mobile d-sm-block d-lg-none nandini-mobile"
-              alt="Nandini Bhatt, Tester, QA, Cloud, DevOps, Automation, AWS"
+              src={"img/hinddeep-mobile-dark.webp"}
+              className="img-fluid main-img-mobile d-sm-block d-lg-none hinddeep-mobile"
+              alt="Hinddeep Purohit, Tester, QA, Cloud, DevOps, Automation, AWS"
             />
             {/* <div style={{ paddingTop: '50px' }}>
               <iframe title="Video Resume" style={{ borderRadius: 125 }} width="250" height="250"
@@ -95,7 +95,7 @@ const Hero = () => {
               <FormattedMessage
                 description="title"
                 id="Hero.title"
-                defaultMessage="I'm Nandini Bhatt"
+                defaultMessage="I'm Hinddeep Purohit"
               />
               {/* <span>
                 <FormattedMessage
@@ -165,7 +165,7 @@ const Hero = () => {
                   /> <span> <FormattedMessage
                     description="heroMe"
                     id="Hero.me"
-                    defaultMessage="nandini"
+                    defaultMessage="hinddeep"
                   /> </span>
                 </h1>
                 <span className="title-bg"><FormattedMessage

@@ -34,14 +34,14 @@ const HomeDark = () => {
     document.getElementById('maindiv').classList.remove('yellow')
     document.getElementById('maindiv').classList.add('green')
 
-    const web = document.querySelectorAll('.nandini-web');
+    const web = document.querySelectorAll('.hinddeep-web');
     web.forEach(element => {
-      element.src = "img/nandini-web-light.webp";
+      element.src = "img/hinddeep-web-light.webp";
     });
 
-    const mobile = document.querySelectorAll('.nandini-mobile');
+    const mobile = document.querySelectorAll('.hinddeep-mobile');
     mobile.forEach(element => {
-      element.src = "img/nandini-mobile-light.webp";
+      element.src = "img/hinddeep-mobile-light.webp";
     });
 
     // Change the --before-bg-color variable
@@ -55,14 +55,14 @@ const HomeDark = () => {
     document.getElementById('maindiv').classList.add('yellow')
     document.getElementById('maindiv').classList.remove('green')
 
-    const web = document.querySelectorAll('.nandini-web');
+    const web = document.querySelectorAll('.hinddeep-web');
     web.forEach(element => {
-      element.src = "img/nandini-web-dark.webp";
+      element.src = "img/hinddeep-web-dark.webp";
     });
 
-    const mobile = document.querySelectorAll('.nandini-mobile');
+    const mobile = document.querySelectorAll('.hinddeep-mobile');
     mobile.forEach(element => {
-      element.src = "img/nandini-mobile-dark.webp";
+      element.src = "img/hinddeep-mobile-dark.webp";
     });
 
     // Change the --before-bg-color variable
@@ -258,7 +258,7 @@ const HomeDark = () => {
                   /> <span> <FormattedMessage
                     description="heroMe"
                     id="Hero.me"
-                    defaultMessage="nandini"
+                    defaultMessage="hinddeep"
                   /> </span>
                 </h1>
                 <span className="title-bg"><FormattedMessage
@@ -284,7 +284,7 @@ const HomeDark = () => {
                 <FormattedMessage
                   description="homeMy"
                   id="Home.me"
-                  defaultMessage="nandini's"
+                  defaultMessage="hinddeep's"
                 /> <span> <FormattedMessage
                   description="menuitem2"
                   id="Home.menuitem2"
@@ -321,7 +321,7 @@ const HomeDark = () => {
                 <FormattedMessage
                   description="Home.menuitem4"
                   id="Home.me"
-                  defaultMessage="nandini's"
+                  defaultMessage="hinddeep's"
                 />
                 <span> Blogs </span>
               </h1>
@@ -356,7 +356,7 @@ const HomeDark = () => {
                 /> <span><FormattedMessage
                   description="homeContact2"
                   id="Hero.me"
-                  defaultMessage="nandini"
+                  defaultMessage="hinddeep"
                 /> </span>
               </h1>
               <span className="title-bg">contact</span>

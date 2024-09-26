@@ -25,10 +25,10 @@ const Index = () => {
 
     switch (option) {
       case 'en':
-        url = 'https://assets.nandinibhatt.me/cv/cv_en.pdf'
+        url = 'https://assets.appstasy.in/hinddeep/cv/cv_hinddeep_en.pdf'
         break;
       case 'fr':
-        url = 'https://assets.nandinibhatt.me/cv/cv_fr.pdf' 
+        url = 'https://assets.appstasy.in/hinddeep/cv/cv_hinddeep_fr.pdf' 
         break;
       default:
         return;
