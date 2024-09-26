@@ -25,7 +25,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-2  # Replace with your region
+          aws-region: ca-central-1  # Replace with your region
 
       # speed up pipeline by caching node modules 
       - name: Cache Node.js modules
@@ -129,12 +129,12 @@ jobs:
         
       - name: Deploy React app to AWS S3
         run:
-          aws s3 sync build/ s3://nandinibhatt.me/ --delete --acl public-read --region us-east-2
+          aws s3 sync build/ s3://hinddeepp.appstasy.in/ --delete --acl public-read --region ca-central-1
 
       # Since GitHub Actions runners don’t have access to EC2’s instance metadata service, the AWS CLI cannot automatically retrieve the region from the environment. Explicitly specifying the region as shown above will bypass the need for IMDS.
       - name: Invalidate CloudFront Cache
         run:
-          aws cloudfront create-invalidation --distribution-id E1JHKWLDY7Q5ZL --paths "/*" --debug
+          aws cloudfront create-invalidation --distribution-id E3CLWTJVHAGPFW --paths "/*" --debug
         
       # - name: Install JMeter
       #   run: |
@@ -172,4 +172,4 @@ jobs:
       # - name: Notify on Failure
       #   if: failure() # Execute only if previous steps failed
       #   run: |
-      #     aws sns publish --topic-arn arn:aws:sns:us-east-2:975050059984:codestar-notifications- --message "Your portfolio deployment has failed."
+      #     aws sns publish --topic-arn arn:aws:sns:ca-central-1:975050059984:codestar-notifications- --message "Your portfolio deployment has failed."
